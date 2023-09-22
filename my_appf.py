@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-st.title("Welcome to our free transaction prediction site")
+st.title("Welcome to our free transaction type prediction site")
 st.text("Please fill the following inputs. Depending of your input our model will predic \n whether the transaction fraudal or nonfradual.\n You can use left-sidebar to specify extra specifications. ")
 
 # To load machine learning model
