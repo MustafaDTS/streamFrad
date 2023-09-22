@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 st.title("Welcome to our free transaction type prediction site")
-st.text("Please choose an input for each feature. Depending of your input our model will predict \n the probability of fraudulence.\n You can use left-sidebar to specify your inputs. ")
+st.text("Please choose an input for each feature. Depending on your input our model \nwill predict the probability of fraudulence.\n You can use left-sidebar to specify your inputs. ")
 
 # To load machine learning model
 import pickle
