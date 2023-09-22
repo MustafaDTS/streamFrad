@@ -57,7 +57,7 @@ st.subheader("Press predict if your configuration is okay")
 
 # Prediction with user inputs
 predict = st.button("Predict")
-result = de_05_chur_model.predict(df)
+result = de_05_fraud_model.predict(df)
 if predict:
     st.write("Based on our model your prediction is:")
     if int(result[0]) == 0:
