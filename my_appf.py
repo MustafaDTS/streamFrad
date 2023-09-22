@@ -72,8 +72,8 @@ if predict:
     st.write("Based on our model your prediction is:")
     if result_prob[:,1][0]  < 0.5:
         st.success(result[0], icon="✅")
-        st.write("You can relax!", "The probality of being fradual is:", np.round(result_prob[:,1][0], 2),  "This is a nonfradual transaction.")
+        st.write("You can relax!", "The probality of being fradual is:", np.round(result_prob[:,1][0], 3),  "This is a nonfradual transaction.")
     else:
         st.error(result[0], icon="🚨")
-        st.write("Bad news!", "The probality of being fradual is:", np.round(result_prob[:,1][0],2),  "This is a fradual transaction.")
+        st.write("Bad news!", "The probality of being fradual is:", np.round(result_prob[:,1][0], 3),  "This is a fradual transaction.")
     
