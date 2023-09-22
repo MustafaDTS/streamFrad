@@ -58,12 +58,22 @@ st.subheader("Press predict if your configuration is okay")
 # Prediction with user inputs
 predict = st.button("Predict")
 result = de_05_fraud_model.predict(df)
+result_prob = de_05_fraud_model.predict_proba(df)
+# if predict:
+#     st.write("Based on our model your prediction is:")
+#     if int(result[0]) == 0:
+#         st.success(result[0], icon="✅")
+#         st.write("You can relax! This is a nonfradual transaction.")
+#     else:
+#         st.error(result[0], icon="🚨")
+#         st.write("Bad news! This is a nonfradual transaction.")
+
 if predict:
     st.write("Based on our model your prediction is:")
-    if int(result[0]) == 0:
+    if result_prob[:,1][0]  < 0.5:
         st.success(result[0], icon="✅")
-        st.write("You can relax! This is a nonfradual transaction.")
+        st.write("You can relax!", "The probality of being fradual is:", result_prob[:,1][0],  "This is a nonfradual transaction.")
     else:
         st.error(result[0], icon="🚨")
-        st.write("Bad news! This is a nonfradual transaction.")
+        st.write("Bad news!", "The probality of being fradual is:", result_prob[:,1][0],  "This is a fradual transaction.")
     
